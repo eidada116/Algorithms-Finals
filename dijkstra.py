@@ -19,10 +19,13 @@ PATH_COLOR = (255, 165, 0)
 GRID_COLOR = (200, 200, 200)
 
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
-pygame.display.set_caption("Visualizer")
+pygame.display.set_caption("dijkstra's")
 
-background_image = pygame.image.load("background.jpg")
-background_image = pygame.transform.scale(background_image, (WINDOW_WIDTH, WINDOW_HEIGHT))
+#background_image = pygame.image.load("background.jpg")
+#background_image = pygame.transform.scale(background_image, (WINDOW_WIDTH, WINDOW_HEIGHT))
+
+BACGKROUND_COLOR = (255,255,255)
+
 
 drawn_cells = set() 
 player_position = None 
@@ -124,7 +127,9 @@ def main():
                     if player_position and end_position:
                         path, visited = dijkstra(player_position, end_position, drawn_cells)
 
-        screen.blit(background_image, (0, 0))
+        #screen.blit(background_image, (0, 0))
+        screen.fill(BACGKROUND_COLOR)
+
 
         #THIS DRAWS THE COLUMNS AND ROWS
         for row in range(ROWS + 1):
